@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">OC Pizza</string>
+    <string name="connexion">Connexion</string>
+    <string name="email">email</string>
+    <string name="mot_de_passe">mot de passe</string>
+    <string name="require">champs obligatoire</string>
+</resources>
