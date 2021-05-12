@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -16,13 +17,14 @@ public class ConnexionActivity extends AppCompatActivity {
 
     EditText email;
     EditText password;
+    TextView inscription;
     TextView alert_email;
     TextView alert_password;
 
     Boolean checkSubmit = false;
     Boolean checkUser = false;
 
-    DatabaseManager database;
+    DatabaseManager database = DatabaseManager.getDatabase(this);
 
     User actualUser = new User();
 
@@ -33,9 +35,17 @@ public class ConnexionActivity extends AppCompatActivity {
 
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
+        inscription = findViewById(R.id.inscription);
         alert_email = findViewById(R.id.alert_email);
         alert_password = findViewById(R.id.alert_password);
 
+        inscription.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                startActivity(intent);
+            }
+        });
         checking();
         if (checkSubmit){
             actualUser = database
@@ -50,11 +60,10 @@ public class ConnexionActivity extends AppCompatActivity {
             if (checkUser){
                 switch (actualUser.getFunction().getId()){
                     case 0:
-
-                    case 1:
-                        Intent intent = new Intent();
-                        startActivity(intent);
+                        Intent intent1 = new Intent(ConnexionActivity.this,OrderActivity.class);
+                        startActivity(intent1);
                         break;
+                    case 1:
 
                     case 2:
 

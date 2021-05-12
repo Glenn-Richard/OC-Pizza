@@ -1,5 +1,6 @@
 package com.example.ocpizza.service;
 
+import com.example.ocpizza.R;
 import com.example.ocpizza.model.Function;
 import com.example.ocpizza.model.Ingredient;
 import com.example.ocpizza.model.Pizza;
@@ -36,13 +37,13 @@ public class ApiPizzaBank {
             new Ingredient("Miel",1,true)
     );
     List<Pizza> PIZZAS = Arrays.asList(
-            new Pizza("Margherita", 9.5, MARGHERITA,true),
-            new Pizza("Regina", 12.5, REGINA,true),
-            new Pizza("Extra Viande", 14.0, EXTRA_VIANDE,true),
-            new Pizza("Forestière", 11.5, FORESTIERE,true),
-            new Pizza("Chèvre Miel", 13.5, CHEVRE_MIEL,true),
-            new Pizza("Peperoni", 13.0, PEPERONI,true),
-            new Pizza("Orientale", 13.5, ORIENTALE,true)
+            new Pizza("Margherita", R.mipmap.oc_pizza_picture, 9.5, MARGHERITA,true),
+            new Pizza("Regina", R.mipmap.oc_pizza_picture, 12.5, REGINA,true),
+            new Pizza("Extra Viande", R.mipmap.oc_pizza_picture, 14.0, EXTRA_VIANDE,true),
+            new Pizza("Forestière", R.mipmap.oc_pizza_picture, 11.5, FORESTIERE,true),
+            new Pizza("Chèvre Miel", R.mipmap.oc_pizza_picture, 13.5, CHEVRE_MIEL,true),
+            new Pizza("Peperoni", R.mipmap.oc_pizza_picture, 13.0, PEPERONI,true),
+            new Pizza("Orientale", R.mipmap.oc_pizza_picture, 13.5, ORIENTALE,true)
     );
     List<Pizzeria> PIZZERIAS = Arrays.asList(
             new Pizzeria("OC Pizza Paris","Paris",PIZZAS),

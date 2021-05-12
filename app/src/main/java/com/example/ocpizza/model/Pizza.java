@@ -1,5 +1,7 @@
 package com.example.ocpizza.model;
 
+import android.media.Image;
+
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
@@ -18,14 +20,17 @@ public class Pizza {
 
     private String name;
 
+    private int picture;
+
     private double price;
 
     private List<Ingredient> composition;
 
     private boolean available;
 
-    public Pizza(String name, double price, List<Ingredient> composition, boolean available) {
+    public Pizza(String name, int picture, double price, List<Ingredient> composition, boolean available) {
         this.name = name;
+        this.picture = picture;
         this.price = price;
         this.composition = composition;
         this.available = available;
@@ -69,5 +74,13 @@ public class Pizza {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public int getPicture() {
+        return picture;
+    }
+
+    public void setPicture(int picture) {
+        this.picture = picture;
     }
 }
