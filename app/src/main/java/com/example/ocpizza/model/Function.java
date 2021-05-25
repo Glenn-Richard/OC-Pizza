@@ -15,10 +15,14 @@ public class Function {
     @Nullable
     private Pizzeria pizzeria;
 
-    public Function(int id, String name, @Nullable Pizzeria pizzeria) {
+    private String password;
+
+
+    public Function(int id, String name, @Nullable Pizzeria pizzeria, String password) {
         this.id = id;
         this.name = name;
         this.pizzeria = pizzeria;
+        this.password = password;
     }
 
     public int getId() {
@@ -44,5 +48,13 @@ public class Function {
 
     public void setPizzeria(@Nullable Pizzeria pizzeria) {
         this.pizzeria = pizzeria;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

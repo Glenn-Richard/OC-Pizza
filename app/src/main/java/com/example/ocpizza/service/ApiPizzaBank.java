@@ -24,7 +24,7 @@ public class ApiPizzaBank {
     List<Ingredient> PEPERONI = composition(choice_pizza.PEPERONI);
     List<Ingredient> ORIENTALE = composition(choice_pizza.ORIENTALE);
 
-    List<Ingredient> INGREDIENTS = Arrays.asList(
+    public List<Ingredient> INGREDIENTS = Arrays.asList(
             new Ingredient("Sauce tomate",1,true),
             new Ingredient("Crème fraiche",1,true),
             new Ingredient("Fromage",1,true),
@@ -36,7 +36,7 @@ public class ApiPizzaBank {
             new Ingredient("Chèvre",1,true),
             new Ingredient("Miel",1,true)
     );
-    List<Pizza> PIZZAS = Arrays.asList(
+    public List<Pizza> PIZZAS = Arrays.asList(
             new Pizza("Margherita", R.mipmap.oc_pizza_picture, 9.5, MARGHERITA,true),
             new Pizza("Regina", R.mipmap.oc_pizza_picture, 12.5, REGINA,true),
             new Pizza("Extra Viande", R.mipmap.oc_pizza_picture, 14.0, EXTRA_VIANDE,true),
@@ -45,7 +45,7 @@ public class ApiPizzaBank {
             new Pizza("Peperoni", R.mipmap.oc_pizza_picture, 13.0, PEPERONI,true),
             new Pizza("Orientale", R.mipmap.oc_pizza_picture, 13.5, ORIENTALE,true)
     );
-    List<Pizzeria> PIZZERIAS = Arrays.asList(
+    public List<Pizzeria> PIZZERIAS = Arrays.asList(
             new Pizzeria("OC Pizza Paris","Paris",PIZZAS),
             new Pizzeria("OC Pizza Lyon","Lyon",PIZZAS),
             new Pizzeria("OC Pizza Marseille","Marseille",PIZZAS),
@@ -55,11 +55,11 @@ public class ApiPizzaBank {
             new Pizzeria("OC Pizza Montpellier","Montpellier",PIZZAS),
             new Pizzeria("OC Pizza Nice","Nice",PIZZAS)
     );
-    List<Function> FUNCTIONS = Arrays.asList(
-            new Function(00,"Client",null),
-            new Function(01,"Pizzaiolo",null),
-            new Function(02,"Manager",null),
-            new Function(03,"Coursier",null)
+    public List<Function> FUNCTIONS = Arrays.asList(
+            new Function(00,"Client",null,null),
+            new Function(01,"Pizzaiolo",null,"pizzaiolo12345"),
+            new Function(02,"Manager",null,"manager12345"),
+            new Function(03,"Coursier",null,"coursier12345")
     );
     public List<Ingredient> composition(choice_pizza choice){
 

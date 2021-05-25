@@ -1,5 +1,8 @@
 package com.example.ocpizza.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.room.Entity;
@@ -12,7 +15,7 @@ import java.util.List;
                 entity = Function.class,
                 parentColumns = "id",
                 childColumns = "id"))
-public class User {
+public class User implements Parcelable {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -47,6 +50,14 @@ public class User {
         this.password = password;
         this.address = address;
         this.choice = choice;
+    }
+
+    protected User(Parcel in) {
+        id = in.readInt();
+        name = in.readString();
+        email = in.readString();
+        password = in.readString();
+        address = in.readString();
     }
 
     public int getId() {
@@ -108,5 +119,31 @@ public class User {
 
     public void setChoice(@Nullable List<Pizza> choice) {
         this.choice = choice;
+    }
+
+    public static final Creator<User> CREATOR = new Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel in) {
+            return new User(in);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
+    
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(name);
+        dest.writeString(email);
+        dest.writeString(password);
+        dest.writeString(address);
     }
 }

@@ -9,4 +9,8 @@
     <string name="adresse">Adresse</string>
     <string name="sentence">Vous avez déjà un compte? Connectez-vous!</string>
     <string name="check">Valider</string>
+    <string name="mot_de_passe_confirmation">confirmer mot de pasee</string>
+    <string name="submit">Valider</string>
+    <string name="inscription_pro">Inscription Pro</string>
+    <string name="sentence_pro">Choisissez un mot de passe personnel:</string>
 </resources>

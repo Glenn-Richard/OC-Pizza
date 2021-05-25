@@ -1,5 +1,6 @@
 package com.example.ocpizza.database;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -14,9 +15,11 @@ public interface FunctionDao {
     @Insert
     void insertFunction(Function function);
 
+    @Insert
+    void  insertFunctions(List<Function> functions);
     @Delete
     void deleteFunction(Function function);
 
     @Query("SELECT * FROM Function")
-    List<Function> getFunctions();
+    LiveData<List<Function>> getFunctions();
 }

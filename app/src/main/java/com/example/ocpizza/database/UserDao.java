@@ -1,5 +1,6 @@
 package com.example.ocpizza.database;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -18,9 +19,9 @@ public interface UserDao {
     void deleteUser(User user);
 
     @Query("SELECT * FROM User")
-    List<User> getUsers();
+    LiveData<List<User>> getUsers();
 
     @Query("SELECT * FROM user WHERE email LIKE :email AND " +
             "password LIKE :password LIMIT 1")
-    User findUser(String email, String password);
+    LiveData<User> findUser(String email, String password);
 }

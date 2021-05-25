@@ -1,5 +1,6 @@
 package com.example.ocpizza.database;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -15,9 +16,12 @@ public interface IngredientDao {
     @Insert
     void insertIngredient(Ingredient ingredient);
 
+    @Insert
+    void insertIngredients(List<Ingredient> ingredients);
+
     @Delete
     void deleteIngredient(Ingredient ingredient);
 
-    @Query("SELECT * FROM Pizza")
-    List<Ingredient> getIngredients();
+    @Query("SELECT * FROM Ingredient")
+    LiveData<List<Ingredient>> getIngredients();
 }
